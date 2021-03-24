@@ -128,7 +128,7 @@ class BetterPlayerPlaylistController {
   int get currentDataSourceIndex => _currentDataSourceIndex;
 
   ///Get size of [_betterPlayerDataSourceList]
-  int get _dataSourceLength => _betterPlayerDataSourceList.length ?? 0;
+  int get _dataSourceLength => _betterPlayerDataSourceList.length;
 
   ///Get BetterPlayerController instance
   BetterPlayerController? get betterPlayerController => _betterPlayerController;

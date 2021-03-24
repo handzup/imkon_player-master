@@ -87,8 +87,7 @@ class BetterPlayerDataSource {
     this.drmConfiguration,
   }) : assert(
             ((type == BetterPlayerDataSourceType.network ||
-                        type == BetterPlayerDataSourceType.file) &&
-                    url != null) ||
+                    type == BetterPlayerDataSourceType.file)) ||
                 (type == BetterPlayerDataSourceType.memory &&
                     bytes?.isNotEmpty == true),
             "Url can't be null in network or file data source | bytes can't be null when using memory data source");
@@ -213,8 +212,7 @@ class BetterPlayerDataSource {
       useHlsAudioTracks: useHlsAudioTracks ?? this.useHlsAudioTracks,
       resolutions: resolutions ?? this.resolutions,
       cacheConfiguration: cacheConfiguration ?? this.cacheConfiguration,
-      notificationConfiguration:
-          notificationConfiguration ?? this.notificationConfiguration,
+      notificationConfiguration: notificationConfiguration,
       overriddenDuration: overriddenDuration ?? this.overriddenDuration,
       videoFormat: videoFormat ?? this.videoFormat,
       videoExtension: videoExtension ?? this.videoExtension,

@@ -131,8 +131,8 @@ abstract class VideoPlayerPlatform {
   }
 
   ///Enables PiP mode.
-  Future<void> enablePictureInPicture(
-      int? textureId, double? top, double? left, double? width, double? height) {
+  Future<void> enablePictureInPicture(int? textureId, double? top, double? left,
+      double? width, double? height) {
     throw UnimplementedError(
         'enablePictureInPicture() has not been implemented.');
   }
@@ -238,6 +238,8 @@ class DataSource {
       case VideoFormat.dash:
         return 'dash';
       case VideoFormat.other:
+        return 'other';
+      default:
         return 'other';
     }
 

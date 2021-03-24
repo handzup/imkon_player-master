@@ -23,7 +23,7 @@ class BetterPlayerSubtitlesDrawer extends StatefulWidget {
     required this.betterPlayerController,
     this.betterPlayerSubtitlesConfiguration,
     required this.playerVisibilityStream,
-  })  : assert(subtitles != null),
+  })   : assert(subtitles != null),
         assert(betterPlayerController != null),
         assert(playerVisibilityStream != null),
         super(key: key);
@@ -142,7 +142,7 @@ class _BetterPlayerSubtitlesDrawerState
     return Row(children: [
       Expanded(
         child: Align(
-          alignment: _configuration!.alignment ?? Alignment.center,
+          alignment: _configuration!.alignment,
           child: _getTextWithStroke(subtitleText),
         ),
       ),
@@ -152,9 +152,8 @@ class _BetterPlayerSubtitlesDrawerState
   Widget _getTextWithStroke(String subtitleText) {
     String subtitleTextToDisplay = subtitleText;
 
-    subtitleTextToDisplay ??= "";
     return Container(
-      color: _configuration!.backgroundColor ?? Colors.transparent,
+      color: _configuration!.backgroundColor,
       child: Stack(
         children: [
           if (_configuration!.outlineEnabled)

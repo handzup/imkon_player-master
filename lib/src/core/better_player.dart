@@ -214,8 +214,7 @@ class _BetterPlayerState extends State<BetterPlayer>
       if (_betterPlayerConfiguration.autoDetectFullscreenDeviceOrientation ==
           true) {
         final aspectRatio =
-            widget?.controller?.videoPlayerController?.value?.aspectRatio ??
-                1.0;
+            widget.controller.videoPlayerController?.value.aspectRatio ?? 1.0;
         List<DeviceOrientation> deviceOrientations;
         if (aspectRatio < 1.0) {
           deviceOrientations = [

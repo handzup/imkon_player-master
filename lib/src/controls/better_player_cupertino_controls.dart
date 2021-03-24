@@ -689,8 +689,10 @@ class _BetterPlayerCupertinoControlsState
     final errorBuilder =
         _betterPlayerController!.betterPlayerConfiguration.errorBuilder;
     if (errorBuilder != null) {
-      return errorBuilder(context,
-          _betterPlayerController!.videoPlayerController!.value.errorDescription);
+      return errorBuilder(
+          context,
+          _betterPlayerController!
+              .videoPlayerController!.value.errorDescription);
     } else {
       final textStyle = TextStyle(color: _controlsConfiguration.textColor);
       return Center(
@@ -728,9 +730,8 @@ class _BetterPlayerCupertinoControlsState
     }
 
     return CircularProgressIndicator(
-      valueColor: AlwaysStoppedAnimation<Color>(
-          _controlsConfiguration.loadingColor ??
-              _controlsConfiguration.controlBarColor),
+      valueColor:
+          AlwaysStoppedAnimation<Color>(_controlsConfiguration.loadingColor),
     );
   }
 

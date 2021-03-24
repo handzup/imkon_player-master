@@ -28,7 +28,7 @@ class BetterPlayerMaterialControls extends StatefulWidget {
     Key? key,
     required this.onControlsVisibilityChanged,
     required this.controlsConfiguration,
-  })  : assert(onControlsVisibilityChanged != null),
+  })   : assert(onControlsVisibilityChanged != null),
         assert(controlsConfiguration != null),
         super(key: key);
 
@@ -138,8 +138,10 @@ class _BetterPlayerMaterialControlsState
     final errorBuilder =
         _betterPlayerController!.betterPlayerConfiguration.errorBuilder;
     if (errorBuilder != null) {
-      return errorBuilder(context,
-          _betterPlayerController!.videoPlayerController!.value.errorDescription);
+      return errorBuilder(
+          context,
+          _betterPlayerController!
+              .videoPlayerController!.value.errorDescription);
     } else {
       final textStyle = TextStyle(color: _controlsConfiguration.textColor);
       return Center(
@@ -762,9 +764,8 @@ class _BetterPlayerMaterialControlsState
     }
 
     return CircularProgressIndicator(
-      valueColor: AlwaysStoppedAnimation<Color>(
-          _controlsConfiguration.loadingColor ??
-              _controlsConfiguration.controlBarColor),
+      valueColor:
+          AlwaysStoppedAnimation<Color>(_controlsConfiguration.loadingColor),
     );
   }
 }

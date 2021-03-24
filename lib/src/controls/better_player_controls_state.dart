@@ -189,7 +189,7 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
       final Duration position = latestValue.position;
 
       Duration? bufferedEndPosition;
-      if (latestValue.buffered?.isNotEmpty == true) {
+      if (latestValue.buffered.isNotEmpty == true) {
         bufferedEndPosition = latestValue.buffered.last.end;
       }
 
@@ -209,11 +209,11 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
   void _showSubtitlesSelectionWidget() {
     final subtitles =
         List.of(betterPlayerController!.betterPlayerSubtitlesSourceList);
-    final noneSubtitlesElementExists = subtitles?.firstWhereOrNull(
+    final noneSubtitlesElementExists = subtitles.firstWhereOrNull(
             (source) => source.type == BetterPlayerSubtitlesSourceType.none) !=
         null;
     if (!noneSubtitlesElementExists) {
-      subtitles?.add(BetterPlayerSubtitlesSource(
+      subtitles.add(BetterPlayerSubtitlesSource(
           type: BetterPlayerSubtitlesSourceType.none));
     }
 
@@ -228,7 +228,7 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
         betterPlayerController!.betterPlayerSubtitlesSource;
     final bool isSelected = (subtitlesSource == selectedSourceType) ||
         (subtitlesSource.type == BetterPlayerSubtitlesSourceType.none &&
-            subtitlesSource?.type == selectedSourceType!.type);
+            subtitlesSource.type == selectedSourceType!.type);
 
     return BetterPlayerMaterialClickableWidget(
       onTap: () {

@@ -79,7 +79,7 @@ class _BetterPlayerWithControlsState extends State<BetterPlayerWithControls> {
       if (betterPlayerController
           .betterPlayerConfiguration.autoDetectFullscreenDeviceOrientation) {
         aspectRatio =
-            betterPlayerController?.videoPlayerController?.value?.aspectRatio ??
+            betterPlayerController.videoPlayerController?.value.aspectRatio ??
                 1.0;
       } else {
         aspectRatio = betterPlayerController
@@ -120,8 +120,7 @@ class _BetterPlayerWithControlsState extends State<BetterPlayerWithControls> {
     _initalized = true;
 
     final bool placeholderOnTop =
-        betterPlayerController.betterPlayerConfiguration.placeholderOnTop ??
-            false;
+        betterPlayerController.betterPlayerConfiguration.placeholderOnTop;
     // ignore: avoid_unnecessary_containers
     return Container(
       child: Stack(
@@ -257,7 +256,7 @@ class _BetterPlayerVideoFitWidgetState
   }
 
   void _initialize() {
-    if (controller?.value?.initialized == false) {
+    if (controller?.value.initialized == false) {
       _initializedListener = () {
         if (!mounted) {
           return;
@@ -295,7 +294,7 @@ class _BetterPlayerVideoFitWidgetState
           width: double.infinity,
           height: double.infinity,
           child: FittedBox(
-            fit: widget.boxFit ?? BoxFit.fill,
+            fit: widget.boxFit,
             child: SizedBox(
               width: controller!.value.size?.width ?? 0,
               height: controller!.value.size?.height ?? 0,
