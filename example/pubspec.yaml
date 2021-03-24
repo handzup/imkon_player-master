@@ -1,0 +1,41 @@
+name: better_player_example
+description: Better Player example usage app.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  #better_player: any
+  better_player:
+    path: ../
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+ 
+  #flutter_widgets: ^0.1.12
+  visibility_detector: ^0.2.0-nullsafety.1
+  flutter_svg: ^0.21.0-nullsafety.0
+  path_provider: ^2.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  assets:
+    - assets/
+  fonts:
+    - family: Fira Sans
+      fonts:
+        - asset: assets/fonts/FiraSans-Regular.ttf
+          weight: 300
+        - asset: assets/fonts/FiraSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/FiraSans-Bold.ttf
+          weight: 600
+
+  uses-material-design: true
